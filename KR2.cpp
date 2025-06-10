@@ -40,7 +40,7 @@ int main() {
         std::cout << "0. Exit and save changes\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
-        std::cin.ignore(); // Очистка буфера
+        std::cin.ignore();
 
         switch(choice) {
             case 1:
