@@ -36,7 +36,6 @@ int main() {
         std::cout << "3. Sort students by name\n";
         std::cout << "4. Sort students by group and name\n";
         std::cout << "5. Show average grades\n";
-        std::cout << "6. Add new student\n";
         std::cout << "0. Exit and save changes\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
@@ -59,9 +58,6 @@ int main() {
                 break;
             case 5:
                 ShowAverageGrades(students, studentCount);
-                break;
-            case 6:
-                AddNewStudent(students, studentCount);
                 break;
             case 0:
                 SaveStudentsToFile(filename, students, studentCount);
