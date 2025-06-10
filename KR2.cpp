@@ -177,8 +177,22 @@ void SortByGroupAndName(Student* students, int count) {
 }
 
 void ShowAverageGrades(Student* students, int count) {
-    std::cout << "\n=== Average Grades ===\n";
+    if (count == 0) {
+        std::cout << "No students in database.\n";
+        return;
+    }
+
+
+    std::map<int, std::pair<double, int>> groupStats;
+
     for (int i = 0; i < count; i++) {
-        std::cout << students[i].name << ": " << students[i].grade << "\n";
+        groupStats[students[i].group].first += students[i].grade;
+        groupStats[students[i].group].second++;
+    }
+
+    std::cout << "\n=== Average Grades by Group ===\n";
+    for (const auto& [group, stats] : groupStats) {
+        double average = stats.first / stats.second;
+        std::cout << "Group " << group << ": " << average << "\n";
     }
 }
